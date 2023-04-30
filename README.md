@@ -3,6 +3,7 @@
 This program simulates the Tideman election algorithm, a ranked preferential voting system that determines the winner of an election based on the preferences of voters.
 
 * [Quick Start](https://github.com/Kate-h36/Tideman-Election-Simulation#quick-start)
+* [Usage](https://github.com/Kate-h36/Tideman-Election-Simulation/blob/main/README.md#usage)
 
 ## Quick Start
 
