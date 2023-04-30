@@ -25,12 +25,10 @@ This program simulates the Tideman election algorithm, a ranked preferential vot
 6. The program will output the winner of the election.
 
 ## Usage 
-
-1. Enter the number of candidates.
-2. Enter the names of the candidates.
-3. Enter the number of voters.
-4. For each voter, enter the rankings of the candidates.
-5. The program will output the winner of the election.
+1. Enter the names of the candidates.
+2. Enter the number of voters.
+3. For each voter, enter the rankings of the candidates.
+4. The program will output the winner of the election.
 
 ```
 ./tideman Alice Bob Charlie
@@ -57,3 +55,16 @@ Rank 3: Bob
 
 Charlie
 ```
+
+## Algoritm Explanetion
+
+The Tideman election method is a ranked voting system. Each voter ranks all candidates in order of preference. The candidate with the most top-ranked votes wins. If there is a tie, the candidate with the fewest last-ranked votes wins.
+
+The algorithm works as follows:
+
+Each voter ranks all the candidates.
+For each pair of candidates (A, B), we count how many voters prefer A to B.
+We create a graph, where each node represents a candidate, and each edge (A, B) represents the fact that more voters prefer A to B than B to A.
+We sort the nodes of the graph in decreasing order of their "strength", defined as the sum of incoming edge weights minus the sum of outgoing edge weights. We break ties by sorting the candidates in lexicographic order.
+We add nodes to the output list in decreasing order of strength, as long as they don't create cycles in the graph.
+The winner is the candidate that appears first in the output list.
