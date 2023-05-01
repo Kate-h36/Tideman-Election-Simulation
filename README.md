@@ -59,15 +59,15 @@ Rank 3: Bob
 Charlie
 ```
 
-## Algoritm Explanetion
+## Algoritm Explanation
 
 The Tideman election method is a ranked voting system. Each voter ranks all candidates in order of preference. The candidate with the most top-ranked votes wins. If there is a tie, the candidate with the fewest last-ranked votes wins.
 
 The algorithm works as follows:
 
 Each voter ranks all the candidates.
-For each pair of candidates (A, B), we count how many voters prefer A to B.
-We create a graph, where each node represents a candidate, and each edge (A, B) represents the fact that more voters prefer A to B than B to A.
-We sort the nodes of the graph in decreasing order of their "strength", defined as the sum of incoming edge weights minus the sum of outgoing edge weights. We break ties by sorting the candidates in lexicographic order.
-We add nodes to the output list in decreasing order of strength, as long as they don't create cycles in the graph.
-The winner is the candidate that appears first in the output list.
+We have 3 candidates (Alice, Bob, Charlie) and we count how many voters prefer Alice to Bob for example.
+We create a graph where each node represents a candidate and each edge (A, B, C) represents the fact that more voters prefer A B C than B A C.
+We sort the nodes of the graph in descending order of their "strength", defined as the sum of the weights of the incoming edges minus the sum of the weights of the outgoing edges. We break ties by sorting the candidates in lexicographic order.
+We add nodes to the output list in descending order of strength if they don't create cycles in the graph.
+The winner is the candidate who appears first on the exit list.
